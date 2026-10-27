@@ -1,13 +1,21 @@
 export const projectsData = [
     {
-        title: "AetherVerse Core",
-        description: "Entorno virtual interactivo multiusuario optimizado para visualización arquitectónica e industrial.",
-        status: "Comercializado"
+        title: "Turismo Santander",
+        description: "Plataforma interactiva de turismo regional accesible enfocada en experiencias inmersivas y promoción cultural.",
+        status: "Desplegado / Activo",
+        link: "https://dev.turismo-santander.desarrollos-pablo-carvajal.com/"
     },
     {
-        title: "Nexus VR Training",
-        description: "Simulador de entrenamiento de alta precisión para operaciones críticas en entornos industriales.",
-        status: "Desarrollado & Vendido"
+        title: "Supermarket Sena Tycoon",
+        description: "Simulación interactiva empresarial y gestión comercial estilo Tycoon en entornos 3D/VR.",
+        status: "Desplegado / Activo",
+        link: "https://supermarket-sena-tycoon.vercel.app/"
+    },
+    {
+        title: "Meta Login",
+        description: "Sistema de autenticación inmersivo e interactivo diseñado para plataformas y entornos virtuales.",
+        status: "Desplegado / Activo",
+        link: "https://meta-login-sigma.vercel.app/"
     }
 ];
 
@@ -33,10 +41,13 @@ export function renderContent() {
     const projectsGrid = document.getElementById('projects-grid');
     if (projectsGrid) {
         projectsGrid.innerHTML = projectsData.map(p => `
-            <div class="card">
+            <div class="card card-project">
                 <h3>${p.title}</h3>
-                <p style="color: var(--text-muted); margin: 0.5rem 0 1rem 0;">${p.description}</p>
-                <span style="font-size: 0.85rem; color: var(--accent-cyan); font-weight: 600;">Estado: ${p.status}</span>
+                <p>${p.description}</p>
+                <div class="card-footer">
+                    <span class="badge">${p.status}</span>
+                    <a href="${p.link}" target="_blank" rel="noopener noreferrer" class="btn-link">🔗 Visitar Sitio</a>
+                </div>
             </div>
         `).join('');
     }
@@ -44,10 +55,10 @@ export function renderContent() {
     const teamGrid = document.getElementById('team-grid');
     if (teamGrid) {
         teamGrid.innerHTML = teamData.map(t => `
-            <div class="card">
+            <div class="card card-team">
                 <h3>${t.name}</h3>
-                <p style="color: var(--text-muted); margin: 0.5rem 0 1rem 0;">${t.role}</p>
-                <a href="${t.github}" target="_blank" rel="noopener noreferrer" class="btn-primary" style="padding: 0.4rem 1rem; font-size: 0.85rem;">Ver Perfil de GitHub</a>
+                <p class="role-text">${t.role}</p>
+                <a href="${t.github}" target="_blank" rel="noopener noreferrer" class="btn-primary">Ver GitHub</a>
             </div>
         `).join('');
     }
