@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aetherium VR Labs | Innovación sin límites</title>
+    <link rel="stylesheet" href="src/css/styles.css">
+    <!-- Importación modular de Three.js vía ESM -->
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+        }
+      }
+    </script>
+</head>
+<body>
+
+    <!-- Contenedor WebGL para el Metaverso/Fondo 3D -->
+    <div id="webgl-container"></div>
+
+    <!-- Header / Navegación -->
+    <header>
+        <div class="logo-container">
+            <img src="aetherium.png" alt="Aetherium Logo">
+            <span>AETHERIUM VR LABS</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#equipo">Equipo</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección Inicio -->
+    <section id="inicio" class="hero">
+        <h1>Innovación sin límites, experiencias más allá de la realidad.</h1>
+        <p>Aetherium VR Labs desarrolla software, aplicaciones y experiencias inmersivas de realidad virtual de alto impacto.</p>
+        <a href="#proyectos" class="btn-primary">Explorar Proyectos</a>
+    </section>
+
+    <!-- Sección Nosotros -->
+    <section id="nosotros">
+        <h2>Quiénes Somos</h2>
+        <p style="color: var(--text-muted); max-width: 800px; margin-top: 1rem;">
+            Somos una empresa de desarrollo de software enfocada en crear soluciones tecnológicas innovadoras, experiencias inmersivas de realidad virtual y entornos digitales interactivos. Combinamos creatividad, diseño y programación para transformar ideas en experiencias digitales modernas, eficientes y de alto impacto.
+        </p>
+    </section>
+
+    <!-- Sección Proyectos -->
+    <section id="proyectos">
+        <h2>Proyectos y Soluciones</h2>
+        <div class="grid-container" id="projects-grid">
+            <!-- Inyectado dinámicamente vía JS -->
+        </div>
+    </section>
+
+    <!-- Sección Equipo -->
+    <section id="equipo">
+        <h2>Integrantes del Lab</h2>
+        <div class="grid-container" id="team-grid">
+            <!-- Inyectado dinámicamente vía JS -->
+        </div>
+    </section>
+
+    <!-- Script de inicialización principal -->
+    <script type="module" src="src/js/app.js"></script>
+</body>
+</html>
