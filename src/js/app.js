@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 🛡️ SEGURIDAD ESTRICTA DEL FORMULARIO DE COTIZACIÓN
+    // 🛡️ SEGURIDAD ESTRICTA Y VALIDACIONES DE ENTRADA
     const quoteForm = document.getElementById('quote-form');
     const formStatus = document.getElementById('form-status');
 
@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const formData = new FormData(quoteForm);
 
-            // 🛡️ OFUSCACIÓN DE ENDPOINT: Se arma la URL dinámicamente en memoria (Inmune a lectura estática)
+            // 🛡️ OFUSCACIÓN DE ENDPOINT PRIVADO (mgakbvl protegido en memoria)
             const p1 = "https://form";
             const p2 = "spree.io/f/";
             const p3 = "mgaakbvl";
