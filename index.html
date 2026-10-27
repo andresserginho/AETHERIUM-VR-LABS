@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aetherium VR Labs | Innovación sin límites</title>
+    <title>Aetherium VR Labs | Innovación & Experiencias Inmersivas</title>
+    <link rel="icon" type="image/png" href="Aetherium.png">
     <link rel="stylesheet" href="src/css/styles.css">
-    <!-- Importación modular de Three.js vía ESM -->
+    
     <script type="importmap">
       {
         "imports": {
@@ -16,57 +17,94 @@
 </head>
 <body>
 
-    <!-- Contenedor WebGL para el Metaverso/Fondo 3D -->
-    <div id="webgl-container"></div>
+    <!-- Widget de Accesibilidad Flotante (Abajo a la Derecha) -->
+    <div class="accessibility-widget">
+        <button id="accessibility-toggle" class="accessibility-toggle" aria-label="Abrir menú de accesibilidad" title="Accesibilidad">
+            ♿
+        </button>
+        <div id="accessibility-menu" class="accessibility-menu" role="region" aria-label="Opciones de Accesibilidad">
+            <button id="btn-contrast">👁️ Alto Contraste</button>
+            <button id="btn-text-inc">A+ Agrandar Texto</button>
+            <button id="btn-text-dec">A- Reducir Texto</button>
+            <button id="btn-motion">⏸️ Pausar Animación</button>
+        </div>
+    </div>
+
+    <!-- Contenedor WebGL para el Fondo 3D -->
+    <div id="webgl-container" aria-hidden="true"></div>
 
     <!-- Header / Navegación -->
     <header>
-        <div class="logo-container">
-            <img src="aetherium.png" alt="Aetherium Logo">
+        <a href="#inicio" class="logo-container" aria-label="Inicio Aetherium VR Labs">
+            <img src="Aetherium.png" alt="Aetherium VR Labs Logo">
             <span>AETHERIUM VR LABS</span>
-        </div>
-        <nav>
+        </a>
+        <nav aria-label="Navegación principal">
             <ul>
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#logros">Reconocimientos</a></li>
                 <li><a href="#proyectos">Proyectos</a></li>
                 <li><a href="#equipo">Equipo</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Sección Inicio -->
-    <section id="inicio" class="hero">
-        <h1>Innovación sin límites, experiencias más allá de la realidad.</h1>
-        <p>Aetherium VR Labs desarrolla software, aplicaciones y experiencias inmersivas de realidad virtual de alto impacto.</p>
-        <a href="#proyectos" class="btn-primary">Explorar Proyectos</a>
-    </section>
+    <!-- Contenido Principal -->
+    <main>
+        <section id="inicio" class="hero">
+            <div class="hero-content">
+                <span class="badge-hero">Pioneros en Tecno-Inmersión</span>
+                <h1>Innovación sin límites, experiencias más allá de la realidad.</h1>
+                <p>Desarrollamos ecosistemas virtuales, simuladores interactivos e inteligencia artificial inmersiva de alto impacto empresarial.</p>
+                <div class="hero-actions">
+                    <a href="#proyectos" class="btn-primary">Explorar Portafolio</a>
+                    <a href="#logros" class="btn-secondary">Logros InnovaÉtica</a>
+                </div>
+            </div>
+            <div class="hero-brand-card">
+                <img src="Aetherium.png" alt="Identidad Corporativa Aetherium VR Labs" class="brand-image">
+            </div>
+        </section>
 
-    <!-- Sección Nosotros -->
-    <section id="nosotros">
-        <h2>Quiénes Somos</h2>
-        <p style="color: var(--text-muted); max-width: 800px; margin-top: 1rem;">
-            Somos una empresa de desarrollo de software enfocada en crear soluciones tecnológicas innovadoras, experiencias inmersivas de realidad virtual y entornos digitales interactivos. Combinamos creatividad, diseño y programación para transformar ideas en experiencias digitales modernas, eficientes y de alto impacto.
-        </p>
-    </section>
+        <section id="nosotros">
+            <h2 class="section-title">Quiénes Somos</h2>
+            <div class="glass-card">
+                <p>
+                    <strong>Aetherium VR Labs</strong> es un laboratorio de desarrollo de software especializado en crear soluciones tecnológicas avanzadas, metaversos accesibles y experiencias de realidad virtual de nivel corporativo. Transformamos visiones complejas en arquitecturas digitales interactivas, seguras y escalables.
+                </p>
+            </div>
+        </section>
 
-    <!-- Sección Proyectos -->
-    <section id="proyectos">
-        <h2>Proyectos y Soluciones</h2>
-        <div class="grid-container" id="projects-grid">
-            <!-- Inyectado dinámicamente vía JS -->
-        </div>
-    </section>
+        <section id="logros">
+            <h2 class="section-title">Reconocimiento INNOVAÉTICA 2026 🏆</h2>
+            <div class="glass-card achievement-card">
+                <div class="achievement-badge">Galardón a la Innovación Regional</div>
+                <h3>Plataforma Santander Turismo Accesible</h3>
+                <p>
+                    En el evento <strong>INNOVAÉTICA 2026</strong>, el <strong>SENA Regional Santander</strong> y los aprendices del <strong>Centro de Servicios Empresariales y Turísticos (CSET)</strong> recibieron un destacado reconocimiento por el desarrollo de la <em>Plataforma Santander Turismo Accesible</em>.
+                </p>
+                <p>
+                    Esta iniciativa pionera integra inteligencia artificial, metaversos inclusivos y experiencias inmersivas 3D orientadas a facilitar el acceso universal a la riqueza turística y cultural de la región.
+                </p>
+            </div>
+        </section>
 
-    <!-- Sección Equipo -->
-    <section id="equipo">
-        <h2>Integrantes del Lab</h2>
-        <div class="grid-container" id="team-grid">
-            <!-- Inyectado dinámicamente vía JS -->
-        </div>
-    </section>
+        <section id="proyectos">
+            <h2 class="section-title">Soluciones y Ecosistemas Creados</h2>
+            <div class="grid-container" id="projects-grid"></div>
+        </section>
 
-    <!-- Script de inicialización principal -->
+        <section id="equipo">
+            <h2 class="section-title">Líderes y Cofundadores</h2>
+            <div class="grid-container" id="team-grid"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Aetherium VR Labs. Todos los derechos reservados. Santander, Colombia.</p>
+    </footer>
+
     <script type="module" src="src/js/app.js"></script>
 </body>
 </html>
