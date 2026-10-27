@@ -17,11 +17,17 @@
 </head>
 <body>
 
-    <!-- Widget de Accesibilidad Flotante (Abajo a la Derecha) -->
+    <!-- Banner de Cookies Esenciales -->
+    <div id="cookie-banner" class="cookie-banner" role="region" aria-label="Aviso de privacidad y cookies">
+        <p>
+            🔒 En <strong>Aetherium VR Labs</strong> respetamos su privacidad. Este sitio utiliza únicamente cookies técnicas esenciales para el funcionamiento del entorno 3D. No rastreamos ni almacenamos información personal en su dispositivo.
+        </p>
+        <button id="btn-accept-cookies" class="btn-cookie">Entendido y Aceptar</button>
+    </div>
+
+    <!-- Widget de Accesibilidad Flotante -->
     <div class="accessibility-widget">
-        <button id="accessibility-toggle" class="accessibility-toggle" aria-label="Abrir menú de accesibilidad" title="Accesibilidad">
-            ♿
-        </button>
+        <button id="accessibility-toggle" class="accessibility-toggle" aria-label="Abrir menú de accesibilidad" title="Accesibilidad">♿</button>
         <div id="accessibility-menu" class="accessibility-menu" role="region" aria-label="Opciones de Accesibilidad">
             <button id="btn-contrast">👁️ Alto Contraste</button>
             <button id="btn-text-inc">A+ Agrandar Texto</button>
@@ -45,6 +51,7 @@
                 <li><a href="#nosotros">Nosotros</a></li>
                 <li><a href="#logros">Reconocimientos</a></li>
                 <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#cotizar">Cotizar</a></li>
                 <li><a href="#equipo">Equipo</a></li>
             </ul>
         </nav>
@@ -58,8 +65,8 @@
                 <h1>Innovación sin límites, experiencias más allá de la realidad.</h1>
                 <p>Desarrollamos ecosistemas virtuales, simuladores interactivos e inteligencia artificial inmersiva de alto impacto empresarial.</p>
                 <div class="hero-actions">
-                    <a href="#proyectos" class="btn-primary">Explorar Portafolio</a>
-                    <a href="#logros" class="btn-secondary">Logros InnovaÉtica</a>
+                    <a href="#cotizar" class="btn-primary">Solicitar Cotización</a>
+                    <a href="#proyectos" class="btn-secondary">Explorar Portafolio</a>
                 </div>
             </div>
             <div class="hero-brand-card">
@@ -95,11 +102,82 @@
             <div class="grid-container" id="projects-grid"></div>
         </section>
 
+        <!-- Sección de Cotización de Proyectos -->
+        <section id="cotizar">
+            <h2 class="section-title">Cotizar Proyecto o Solución 📑</h2>
+            <div class="glass-card quote-container">
+                <p style="margin-bottom: 1.5rem; color: var(--text-muted);">
+                    Solicite una propuesta técnico-comercial personalizada para sus requerimientos en Realidad Virtual, Metaversos o Desarrollo Web 3D.
+                </p>
+
+                <!-- Formulario seguro protegido -->
+                <form id="quote-form" class="quote-form">
+                    <div class="form-group-row">
+                        <div class="form-group">
+                            <label for="fullName">Nombre Completo / Empresa *</label>
+                            <input type="text" id="fullName" name="Nombre" placeholder="Ej. Juan Pérez" required autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico *</label>
+                            <input type="email" id="email" name="Email" placeholder="ejemplo@dominio.com" required autocomplete="off">
+                        </div>
+                    </div>
+
+                    <div class="form-group-row">
+                        <div class="form-group">
+                            <label for="phone">Teléfono de Contacto</label>
+                            <input type="tel" id="phone" name="Telefono" placeholder="+57 300 000 0000" autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label for="serviceType">Tipo de Solución Requerida *</label>
+                            <select id="serviceType" name="Tipo_Servicio" required>
+                                <option value="" disabled selected>Seleccione una opción...</option>
+                                <option value="Metaverso / Entorno VR 3D">Metaverso / Entorno VR 3D</option>
+                                <option value="Simulador Interactivos">Simulador Interactivo</option>
+                                <option value="Plataforma Web Empresarial">Plataforma Web Empresarial</option>
+                                <option value="Consultoría Inmersiva">Consultoría Inmersiva</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Detalles del Proyecto y Alcance *</label>
+                        <textarea id="message" name="Mensaje" rows="4" placeholder="Describa brevemente el objetivo, público objetivo o requerimientos específicos..." required></textarea>
+                    </div>
+
+                    <!-- Cláusula Hábeas Data (Ley 1581 de 2012) -->
+                    <div class="form-checkbox-group">
+                        <input type="checkbox" id="habeasData" name="Autorizacion_Habees_Data" required>
+                        <label for="habeasData">
+                            Acepto el <a href="#" id="open-policy">Tratamiento de mis Datos Personales</a> conforme a la Ley 1581 de 2012 (Hábeas Data) para el envío de la cotización requerida. *
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn-primary btn-submit">Enviar Solicitud de Cotización 🚀</button>
+                    <div id="form-status" class="form-status" aria-live="polite"></div>
+                </form>
+            </div>
+        </section>
+
         <section id="equipo">
             <h2 class="section-title">Líderes y Cofundadores</h2>
             <div class="grid-container" id="team-grid"></div>
         </section>
     </main>
+
+    <!-- Modal Política de Tratamiento de Datos -->
+    <div id="policy-modal" class="modal-overlay" aria-hidden="true">
+        <div class="modal-content glass-card">
+            <h3>Política de Tratamiento de Datos Personales (Hábeas Data)</h3>
+            <p>
+                De conformidad con la <strong>Ley Estatutaria 1581 de 2012</strong> de Colombia y sus decretos reglamentarios, <strong>Aetherium VR Labs</strong> le informa que los datos suministrados a través de este formulario serán tratados exclusivamente con la finalidad de gestionar, evaluar y responder a su solicitud de cotización comercial.
+            </p>
+            <p>
+                Sus datos no serán compartidos, vendidos ni cedidos a terceros sin su consentimiento previo. Como titular, usted tiene derecho a conocer, actualizar, rectificar o solicitar la supresión de su información en cualquier momento mediante comunicación al correo <code>metaversossenacset@gmail.com</code>.
+            </p>
+            <button id="close-policy" class="btn-primary" style="margin-top: 1rem;">Cerrar y Volver</button>
+        </div>
+    </div>
 
     <footer>
         <p>&copy; 2026 Aetherium VR Labs. Todos los derechos reservados. Santander, Colombia.</p>
